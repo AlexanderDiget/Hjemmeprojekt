@@ -9,11 +9,15 @@ namespace OrangeTreeSim
 {
     public class OrangeTree
     {
+<<<<<<< HEAD
         
+=======
+>>>>>>> 6a2159d2d00d45c6cfcf864b75b885aaaaacf24d
         private int age = 0;
         private int height = 0;
         private bool treeAlive = false;
         private int numOranges = 0;
+<<<<<<< HEAD
         private int orangesEaten = 0;
 
 
@@ -56,6 +60,10 @@ namespace OrangeTreeSim
         }
 
         /*
+=======
+        private int orangesEaten = 0; 
+
+>>>>>>> 6a2159d2d00d45c6cfcf864b75b885aaaaacf24d
         public void SetAge(int age)
         {
             this.age = age;
@@ -88,11 +96,15 @@ namespace OrangeTreeSim
         {
             return orangesEaten;
         }
+<<<<<<< HEAD
         */
+=======
+>>>>>>> 6a2159d2d00d45c6cfcf864b75b885aaaaacf24d
 
         public void OneYearPasses() 
         {
             age++;
+<<<<<<< HEAD
             numOranges = 0;
             orangesEaten = 0;
 
@@ -101,6 +113,12 @@ namespace OrangeTreeSim
                 TreeAlive = true;
                 height = height + 2;
                 numOranges = (age - 1 ) * 5;
+=======
+
+            if (age < 80)
+            {
+                height = height + 2;
+>>>>>>> 6a2159d2d00d45c6cfcf864b75b885aaaaacf24d
              /* Træets alder øges med 1 (age-feltet)
                 Træet højde øges med 2, hvis træets alder er under 80, ellers ikke (height-feltet)
                 Træet er i live, hvis træets alder er under 80, ellers dødt (treeAlive)
@@ -109,10 +127,16 @@ namespace OrangeTreeSim
             }
             else 
             {
+<<<<<<< HEAD
                 TreeAlive = false;
              
             }
             
+=======
+                treeAlive = false;
+            }
+            numOranges = (age - 1) * 5;
+>>>>>>> 6a2159d2d00d45c6cfcf864b75b885aaaaacf24d
             // Første år (1-1)*5 = 0
             // Andet år (2-1)*5 = 5
             // Tredje år (3-1)*5 = 10
