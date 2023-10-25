@@ -29,7 +29,7 @@ namespace PersistensTest1
             StreamReader SR = new StreamReader(dataFileName);
             string lines = SR.ReadLine();
             string[] pArray = lines.Split(';');
-            
+
             Person newPerson = new Person(pArray[0], Convert.ToDateTime(pArray[1]), Convert.ToDouble(pArray[2]), Convert.ToBoolean(pArray[3]), Convert.ToInt32(pArray[4]));
             SR.Close();
             return newPerson;
@@ -42,7 +42,18 @@ namespace PersistensTest1
             {
                 SW.WriteLine(persons[i].MakeTitle());
             }
+
+
+
+
             SW.Close();
+        }
+
+        public Person[] LoadPersons();
+        {
+        StreamReader SR1 = new StreamReader(dataFileName);
+
+
         }
 
 

@@ -14,7 +14,7 @@
 
             // Second menu item
 
-            mainMenu.AddmenuItem("2. Gør dat");
+            mainMenu.AddmenuItem("2. Gør dat");  cssc
 
             // Third menu item
             mainMenu.AddmenuItem("3. Gør noget");
