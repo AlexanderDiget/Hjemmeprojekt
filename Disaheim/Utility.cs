@@ -20,7 +20,7 @@ namespace Disaheim
             {
                 return 12.5;
             }
-            else if (amulet.Quality == Level.medium) 
+            else if (amulet.Quality == Level.medium)
             {
                 return 20.0;
             }
@@ -28,7 +28,23 @@ namespace Disaheim
             {
                 return 27.5;
             }
-            
+
+        }
+        public double GetValueOfCourse(Course course)
+        {
+            int remainder = course.DurationInMinutes % 60;
+            if (remainder == 0)
+            {
+                return course.DurationInMinutes / 60 * 875;
+            }
+            else if (remainder > 0)
+            {
+                return (course.DurationInMinutes / 60 + 1) * 875;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
