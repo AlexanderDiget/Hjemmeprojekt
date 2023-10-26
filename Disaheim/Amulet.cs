@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace Disaheim
 {
-    public class Amulet
+    public class Amulet : Merchandise
     {
         public string ItemId {  get; set; }
         public string Design {  get; set; }
         public Level Quality {  get; set; }
 
-        public Amulet(string itemId)
+        public Amulet(string itemId, Level quality, string design) : this(itemId, quality)
         {
-            ItemId = itemId;
-            Quality = Level.medium;
+            Design = design;
         }
 
         public Amulet(string itemId, Level quality): this(itemId)
         {
             Quality = quality;
         }
-        public Amulet(string itemId, Level quality, string design) : this(itemId, quality)
+        public Amulet(string itemId) 
         {
-            Design = design;
+            ItemId = itemId;
+            Quality = Level.medium;
         }
         public override string ToString()
         {

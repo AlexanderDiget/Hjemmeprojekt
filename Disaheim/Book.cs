@@ -7,25 +7,24 @@ using System.Threading.Tasks;
 
 namespace Disaheim
 {
-    public class Book
+    public class Book : Merchandise
     {
         public string ItemId;
         public string Title;
         public double Price;
 
-        public Book(string itemId) 
+        public Book(string itemId, string title, double price): this(itemId, title)
         {
-            ItemId = itemId;
+            Price = price;
         }
         public Book(string itemId, string title) : this(itemId) 
         {
             Title = title;
         }
-        public Book(string itemId, string title, double price): this(itemId, title)
+        public Book(string itemId) 
         {
-            Price = price;
+            ItemId = itemId;
         }
-
         public override string ToString()
         {
             return $"ItemId: {ItemId}, Title: {Title}, Price: {Price}";
