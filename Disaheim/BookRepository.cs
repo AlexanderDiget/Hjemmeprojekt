@@ -35,7 +35,7 @@ namespace Disaheim
             double totalValueBook = 0;
             foreach (Book book in books)
             {
-                double bookValue = utility.GetValueOfBook(book);
+                double bookValue = utility.GetValueOfMerchandise(book);
                 totalValueBook += bookValue;
             }
             return totalValueBook;
