@@ -11,6 +11,9 @@ namespace Disaheim
         public string ItemId {  get; set; }
         public string Design {  get; set; }
         public Level Quality {  get; set; }
+        public static double LowQualityValue { get; set; } = 12.5;
+        public static double MediumQualityValue { get; set; } = 20.0;
+        public static double HighQualityValue { get; set; } = 27.5;
 
         public Amulet(string itemId, Level quality, string design) : this(itemId, quality)
         {

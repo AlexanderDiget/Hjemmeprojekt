@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Disaheim
 {
-    public class Course
+    public class Course : IValuable
     {
         public string Name { get; set; }
         public int DurationInMinutes { get; set; }
+        public static double CourseHourValue { get; set; } = 875.0;
 
         public Course(string name, int durationInMinutes) : this(name)
         {
