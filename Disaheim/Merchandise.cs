@@ -10,11 +10,13 @@ namespace Disaheim
     {
         public string ItemId { get; set; }
 
+        public abstract double GetValue();
+
         //public Merchandise(string itemId)
         //{
         //    ItemId = itemId;
         //}
-        
+
         public override string ToString()
         {
             return $"ItemId: {ItemId}";

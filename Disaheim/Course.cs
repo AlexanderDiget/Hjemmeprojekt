@@ -26,5 +26,22 @@ namespace Disaheim
         {
             return $"Name: {Name}, Duration in Minutes: {DurationInMinutes}";
         }
+
+        public double GetValue()
+        {
+            int remainder = DurationInMinutes % 60;
+            if (remainder == 0)
+            {
+                return DurationInMinutes / 60 * CourseHourValue;
+            }
+            else if (remainder > 0)
+            {
+                return (DurationInMinutes / 60 + 1) * CourseHourValue;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
