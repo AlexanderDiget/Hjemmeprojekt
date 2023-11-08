@@ -7,6 +7,20 @@ namespace CustomExceptionHandling
         static void Main(string[] args)
         {
             int skrt = TotallySafe.GetValueAtPosition(-2);
+
+            try
+            {
+                int posValue = TotallySafe.GetValueAtPosition(-1);
+                Console.WriteLine(posValue);
+            }
+            catch (NegativeIndexOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            } 
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             //try
             //{
             //    int posValue = TotallySafe.GetValueAtPosition(-2);
