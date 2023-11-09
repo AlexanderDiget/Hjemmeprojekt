@@ -37,28 +37,12 @@ namespace PersistensTest1
 
         public void SavePersons(Person[] persons)
         {
-            StreamWriter SW = new StreamWriter(dataFileName);
-            for (int i = 0; i < persons.Length; i++)
-            {
-                SW.WriteLine(persons[i].MakeTitle());
-            }
-
-
-
-
-            SW.Close();
+            using (StreamWriter SW = new StreamWriter(dataFileName))
+                for (int i = 0; i < persons.Length; i++)
+                {
+                    SW.WriteLine(persons[i].MakeTitle());
+                }
         }
-
-        public Person[] LoadPersons();
-        {
-        StreamReader SR1 = new StreamReader(dataFileName);
-
-
-        }
-
-
-        
-        
-        
     }
 }
+
