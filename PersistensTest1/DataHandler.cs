@@ -38,10 +38,12 @@ namespace PersistensTest1
         public void SavePersons(Person[] persons)
         {
             using (StreamWriter SW = new StreamWriter(dataFileName))
+            {
                 for (int i = 0; i < persons.Length; i++)
                 {
                     SW.WriteLine(persons[i].MakeTitle());
                 }
+            }
         }
     }
 }
