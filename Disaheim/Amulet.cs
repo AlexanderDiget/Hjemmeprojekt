@@ -34,5 +34,19 @@ namespace Disaheim
             return $"ItemId: {ItemId}, Quality: {Quality}, Design: {Design}";
         }
 
+        public override double GetValue()
+        {
+            switch (Quality)
+            {
+                case Level.low:
+                    return LowQualityValue;
+                case Level.medium:
+                    return MediumQualityValue;
+                case Level.high:
+                    return HighQualityValue;
+                default:
+                    return 0;
+            }
+        }
     }
 }

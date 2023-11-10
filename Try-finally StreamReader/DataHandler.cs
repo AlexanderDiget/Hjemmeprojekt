@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
-namespace PersistensTest1
+namespace Try_finally_StreamReader
 {
     public class DataHandler
     {
@@ -14,6 +13,7 @@ namespace PersistensTest1
         {
             get { return dataFileName; }
         }
+
         public DataHandler(string dataFileName)
         {
             this.dataFileName = dataFileName;
@@ -21,7 +21,7 @@ namespace PersistensTest1
         public void SavePerson(Person person)
         {
             StreamWriter SW = new StreamWriter(dataFileName);
-            SW.WriteLine(person.MakeTitle());
+            SW.Write(person.MakeTitle());
             SW.Close();
         }
         public Person LoadPerson()
@@ -34,15 +34,5 @@ namespace PersistensTest1
             SR.Close();
             return newPerson;
         }
-
-        public void SavePersons(Person[] persons)
-        {
-            using (StreamWriter SW = new StreamWriter(dataFileName))
-                for (int i = 0; i < persons.Length; i++)
-                {
-                    SW.WriteLine(persons[i].MakeTitle());
-                }
-        }
     }
 }
-
