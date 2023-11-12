@@ -23,7 +23,7 @@ namespace Tusindfryd
                 flowers.Add(flower);
                 Console.WriteLine("Flower added succesfully");
             }
-            catch (Exception ex)
+            catch
             {
                 Console.WriteLine("Flower not added succesfully ");
             }
