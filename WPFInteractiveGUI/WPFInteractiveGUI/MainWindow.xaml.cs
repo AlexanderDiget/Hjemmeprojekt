@@ -12,33 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFAndMVVM2.ViewModels;
 
-namespace WPFAndMVVM2
+namespace WPFInteractiveGUI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-            MainViewModel mvm = new MainViewModel();
-        
+        private Controller controller;
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = mvm;
-        }
 
-        private void NewButton_Click(object sender, RoutedEventArgs e)
-        {
-            mvm.AddDefaultPerson();
-            PersonList.ScrollIntoView(mvm.SelectedPerson);
-        }
-
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            mvm.DeleteSelectedPerson();
-            PersonList.ScrollIntoView(mvm.SelectedPerson);
+            controller = new Controller();
         }
     }
 }

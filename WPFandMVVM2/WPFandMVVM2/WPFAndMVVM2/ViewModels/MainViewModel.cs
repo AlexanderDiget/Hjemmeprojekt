@@ -30,24 +30,23 @@ namespace WPFAndMVVM2.ViewModels
             
         }
 
-        private Person selectedPerson;
+        private PersonViewModel selectedPerson;
 
-        public Person SelectedPerson
+        public PersonViewModel SelectedPerson
         {
             get { return selectedPerson; }
             set 
             { 
                 selectedPerson = value;
                 OnPropertyChanged("SelectedPerson");
-
             }
         }
-        protected void OnPropertyChanged(string valgtPerson)
+        protected void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if (propertyChanged != null)
             {
-                propertyChanged(this, new PropertyChangedEventArgs(valgtPerson));
+                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
 
@@ -56,11 +55,12 @@ namespace WPFAndMVVM2.ViewModels
             Person person = personRepo.Add("Specify FirstName", "Specify LastName", 0, "Specify Phone");
             PersonViewModel personViewModel = new PersonViewModel(person);
             PersonsVM.Add(personViewModel);
+            SelectedPerson = personViewModel;
         }
         public void DeleteSelectedPerson() 
         {
-            PersonViewModel personViewModel = new PersonViewModel(SelectedPerson);
-            PersonsVM.Remove(personViewModel);
+            selectedPerson.DeletePerson(personRepo);
+            PersonsVM.Remove(SelectedPerson);
         }
     }
 }

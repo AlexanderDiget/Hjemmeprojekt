@@ -17,7 +17,7 @@
                 <RowDefinition Height="10*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ListBox x:Name="PersonList" Grid.Row="0" ItemsSource="{Binding PersonsVM}" SelectedItem="{Binding SelectedPerson}">
+            <ListBox x:Name="PersonList" Grid.Row="0" ItemsSource="{Binding PersonsVM, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedPerson, UpdateSourceTrigger=PropertyChanged}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -36,7 +36,7 @@
                     </Style>
                 </StackPanel.Resources>
                 <Button x:Name="NewButton" Content="New" Grid.Row="1" Width="50" Height="20" Click="NewButton_Click" />
-                <Button x:Name="DeleteButton" Content="Delete" Grid.Row="1" Width="50" Height="20"/> 
+                <Button x:Name="DeleteButton" Content="Delete" Grid.Row="1" Width="50" Height="20" Click="DeleteButton_Click"/> 
             </StackPanel>
         </Grid>
 
