@@ -47,7 +47,6 @@ namespace TusindfrydWPF
             else MessageBox.Show("Skriv et gydligt navn før du går videre");
             IsButtonReady();
         }
-
         private void BilledeBox_LostFocus(object sender, RoutedEventArgs e)
         {
             flower.PicturePath = BilledeBox.Text;
@@ -73,7 +72,6 @@ namespace TusindfrydWPF
             }
             IsButtonReady();
         }
-
         private void HalveringstidBox_LostFocus(object sender, RoutedEventArgs e)
         {
             try
@@ -86,7 +84,6 @@ namespace TusindfrydWPF
             }
             IsButtonReady();
         }
-
         private void StørrelseBox_LostFocus(object sender, RoutedEventArgs e)
         {
             try
@@ -103,12 +100,10 @@ namespace TusindfrydWPF
         {
             IsButtonReady();
         }
-
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }
-
         private void FortrydButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;

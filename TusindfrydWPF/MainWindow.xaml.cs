@@ -25,7 +25,6 @@ namespace TusindfrydWPF
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         private void OpretBlomstersort_Click(object sender, RoutedEventArgs e)
